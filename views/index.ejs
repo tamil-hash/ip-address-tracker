@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   <script>
+      const lat= "<%= lat %>"
+      const lng= "<%= lng %>"
+      
+   </script>
+
+</head>
+<body>
+  <div class="head">
+    <h2>IP Address Tracker</h2>
+    <form class="ip" action="/" method="post">
+      <input type="text" name="ip" value="" placeholder="Search for any IP address or domain">
+      <button type="submit" name="button">
+        <img src="images/icon-arrow.svg" alt="icon-arrow">
+      </button>
+    </form>
+    <div class="info">
+      <div class="ipaddr">
+        <p>IP ADDRESS</p>
+        <h2><%= ipinfo.ip %></h2>
+      </div>
+      <hr>
+      <div class="location">
+        <p>LOCATION</p>
+        <h2><%= ipinfo.city %></h2>
+      </div>
+      <hr>
+      <div class="time">
+        <p>TIMEZONE</p>
+        <h2><%= ipinfo.timeZone %><!-- add offset value dynamically using the API --></h2>
+      </div>
+      <hr>
+      <div class="isp">
+        <p>ISP</p>
+        <h2><%= ipinfo.isp %></h2>
+      </div>
+    </div>
+  </div>
+  <div id="mapid"></div>
+
+
+
+
+  <script src="script.js"></script>
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
